@@ -1,4 +1,4 @@
-// Copyright (c) 2009-2022 The Bitcoin Core developers
+// Copyright (c) 2009-2022 The biblio Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -75,7 +75,7 @@ int main(int argc, char* argv[])
     int num_test_failures{0};
 
     {
-        BitcoinApplication app;
+        biblioApplication app;
         app.createNode(*init);
 
         AppTests app_tests(app);

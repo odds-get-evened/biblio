@@ -1,7 +1,7 @@
 0.21.0 Release Notes
 ====================
 
-Bitcoin Core version 0.21.0 is now available from:
+biblio Core version 0.21.0 is now available from:
 
   <https://bitcoincore.org/bin/bitcoin-core-0.21.0/>
 
@@ -21,24 +21,24 @@ How to Upgrade
 
 If you are running an older version, shut it down. Wait until it has completely
 shut down (which might take a few minutes in some cases), then run the
-installer (on Windows) or just copy over `/Applications/Bitcoin-Qt` (on Mac)
+installer (on Windows) or just copy over `/Applications/biblio-Qt` (on Mac)
 or `bitcoind`/`bitcoin-qt` (on Linux).
 
-Upgrading directly from a version of Bitcoin Core that has reached its EOL is
+Upgrading directly from a version of biblio Core that has reached its EOL is
 possible, but it might take some time if the data directory needs to be migrated. Old
-wallet versions of Bitcoin Core are generally supported.
+wallet versions of biblio Core are generally supported.
 
 Compatibility
 ==============
 
-Bitcoin Core is supported and extensively tested on operating systems
-using the Linux kernel, macOS 10.12+, and Windows 7 and newer.  Bitcoin
+biblio Core is supported and extensively tested on operating systems
+using the Linux kernel, macOS 10.12+, and Windows 7 and newer.  biblio
 Core should also work on most other Unix-like systems but is not as
-frequently tested on them.  It is not recommended to use Bitcoin Core on
+frequently tested on them.  It is not recommended to use biblio Core on
 unsupported systems.
 
-From Bitcoin Core 0.20.0 onwards, macOS versions earlier than 10.12 are no
-longer supported. Additionally, Bitcoin Core does not yet change appearance
+From biblio Core 0.20.0 onwards, macOS versions earlier than 10.12 are no
+longer supported. Additionally, biblio Core does not yet change appearance
 when macOS "dark mode" is activated.
 
 The node's known peers are persisted to disk in a file called `peers.dat`. The
@@ -74,7 +74,7 @@ P2P and network changes
 - This release adds support for Tor version 3 hidden services, and rumoring them
   over the network to other peers using
   [BIP155](https://github.com/bitcoin/bips/blob/master/bip-0155.mediawiki).
-  Version 2 hidden services are still fully supported by Bitcoin Core, but the
+  Version 2 hidden services are still fully supported by biblio Core, but the
   Tor network will start
   [deprecating](https://blog.torproject.org/v2-deprecation-timeline) them in the
   coming months. (#19954)
@@ -83,7 +83,7 @@ P2P and network changes
   `-listenonion` configuration parameter will now be created as a Tor v3 service
   instead of Tor v2. The private key that was used for Tor v2 (if any) will be
   left untouched in the `onion_private_key` file in the data directory (see
-  `-datadir`) and can be removed if not needed. Bitcoin Core will no longer
+  `-datadir`) and can be removed if not needed. biblio Core will no longer
   attempt to read it. The private key for the Tor v3 service will be saved in a
   file named `onion_v3_private_key`. To use the deprecated Tor v2 service (not
   recommended), the `onion_private_key` can be copied over
@@ -253,7 +253,7 @@ New settings
 ------------
 
 - The `startupnotify` option is used to specify a command to
-  execute when Bitcoin Core has finished with its startup
+  execute when biblio Core has finished with its startup
   sequence. (#15367)
 
 Wallet
@@ -325,11 +325,11 @@ Wallet
 
 ### Automatic wallet creation removed
 
-Bitcoin Core will no longer automatically create new wallets on startup. It will
+biblio Core will no longer automatically create new wallets on startup. It will
 load existing wallets specified by `-wallet` options on the command line or in
 `bitcoin.conf` or `settings.json` files. And by default it will also load a
 top-level unnamed ("") wallet. However, if specified wallets don't exist,
-Bitcoin Core will now just log warnings instead of creating new wallets with
+biblio Core will now just log warnings instead of creating new wallets with
 new keys and addresses like previous releases did.
 
 New wallets can be created through the GUI (which has a more prominent create
@@ -351,9 +351,9 @@ of "mine" for scripts which is simpler and more intuitive than that used by Lega
 Descriptor Wallets also uses different semantics for watch-only things and imports.
 
 As Descriptor Wallets are a new type of wallet, their introduction does not affect existing wallets.
-Users who already have a Bitcoin Core wallet can continue to use it as they did before without
+Users who already have a biblio Core wallet can continue to use it as they did before without
 any change in behavior. Newly created Legacy Wallets (which remains the default type of wallet) will
-behave as they did in previous versions of Bitcoin Core.
+behave as they did in previous versions of biblio Core.
 
 The differences between Descriptor Wallets and Legacy Wallets are largely limited to non user facing
 things. They are intended to behave similarly except for the import/export and watchonly functionality
@@ -448,7 +448,7 @@ descriptors with private keys for now as explained earlier.
 
 #### BIP 44/49/84 Support
 
-The change to using descriptors changes the default derivation paths used by Bitcoin Core
+The change to using descriptors changes the default derivation paths used by biblio Core
 to adhere to BIP 44/49/84. Descriptors with different derivation paths can be imported without
 issue.
 
@@ -471,18 +471,18 @@ was already being broken by the move to descriptors.
   is introduced to the `sendtoaddress`, `sendmany`, `fundrawtransaction` and
   `walletcreatefundedpsbt` RPCs as well as to the experimental new `send`
   RPC. The legacy `feeRate` option in `fundrawtransaction` and
-  `walletcreatefundedpsbt` still exists for setting a fee rate in BTC per 1,000
-  vbytes (BTC/kvB), but it is expected to be deprecated soon to avoid
-  confusion. For these RPCs, the fee rate error message is updated from BTC/kB
-  to sat/vB and the help documentation in BTC/kB is updated to BTC/kvB. The
+  `walletcreatefundedpsbt` still exists for setting a fee rate in LEX per 1,000
+  vbytes (LEX/kvB), but it is expected to be deprecated soon to avoid
+  confusion. For these RPCs, the fee rate error message is updated from LEX/kB
+  to sat/vB and the help documentation in LEX/kB is updated to LEX/kvB. The
   `send` and `sendtoaddress` RPC examples are updated to aid users in creating
   transactions with explicit fee rates. (#20305, #11413)
 
-- The `bumpfee` RPC `fee_rate` option is changed from BTC/kvB to sat/vB and the
+- The `bumpfee` RPC `fee_rate` option is changed from LEX/kvB to sat/vB and the
   help documentation is updated. Users are warned that this is a breaking API
   change, but it should be relatively benign: the large (100,000 times)
-  difference between BTC/kvB and sat/vB units means that a transaction with a
-  fee rate mistakenly calculated in BTC/kvB rather than sat/vB should raise an
+  difference between LEX/kvB and sat/vB units means that a transaction with a
+  fee rate mistakenly calculated in LEX/kvB rather than sat/vB should raise an
   error due to the fee rate being set too low. In the worst case, the
   transaction may send at 1 sat/vB, but as Replace-by-Fee (BIP125 RBF) is active
   by default when an explicit fee rate is used, the transaction fee can be
@@ -492,7 +492,7 @@ GUI changes
 -----------
 
 - Wallets created or loaded in the GUI will now be automatically loaded on
-  startup, so they don't need to be manually reloaded next time Bitcoin Core is
+  startup, so they don't need to be manually reloaded next time biblio Core is
   started. The list of wallets to load on startup is stored in
   `\<datadir\>/settings.json` and augments any command line or `bitcoin.conf`
   `-wallet=` settings that specify more wallets to load. Wallets that are
@@ -1132,7 +1132,7 @@ Tests
 - #18709 Note why we can't use `thread_local` with glibc back compat (fanquake)
 - #18410 Improve commenting for coins.cpp|h (jnewbery)
 - #18157 fixing init.md documentation to not require rpcpassword (jkcd)
-- #18739 Document how to fuzz Bitcoin Core using Honggfuzz (practicalswift)
+- #18739 Document how to fuzz biblio Core using Honggfuzz (practicalswift)
 - #18779 Better explain GNU ld's dislike of ld64's options (fanquake)
 - #18663 Mention build docs in README.md (saahilshangle)
 - #18810 Update rest info on block size and json (chrisabrams)

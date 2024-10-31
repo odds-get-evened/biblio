@@ -113,7 +113,7 @@ Generate list of authors:
 
 ### Setup and perform Guix builds
 
-Checkout the Bitcoin Core version you'd like to build:
+Checkout the biblio Core version you'd like to build:
 
 ```sh
 pushd ./bitcoin
@@ -297,9 +297,9 @@ cat "$VERSION"/*/all.SHA256SUMS.asc > SHA256SUMS.asc
 
   - bitcoin-dev and bitcoin-core-dev mailing list
 
-  - Bitcoin Core announcements list https://bitcoincore.org/en/list/announcements/join/
+  - biblio Core announcements list https://bitcoincore.org/en/list/announcements/join/
 
-  - Bitcoin Core Twitter https://twitter.com/bitcoincoreorg
+  - biblio Core Twitter https://twitter.com/bitcoincoreorg
 
   - Celebrate
 

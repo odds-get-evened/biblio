@@ -1,4 +1,4 @@
-Bitcoin Core version 0.16.0 is now available from:
+biblio Core version 0.16.0 is now available from:
 
   <https://bitcoincore.org/bin/bitcoin-core-0.16.0/>
 
@@ -18,7 +18,7 @@ How to Upgrade
 
 If you are running an older version, shut it down. Wait until it has completely
 shut down (which might take a few minutes for older versions), then run the
-installer (on Windows) or just copy over `/Applications/Bitcoin-Qt` (on Mac)
+installer (on Windows) or just copy over `/Applications/biblio-Qt` (on Mac)
 or `bitcoind`/`bitcoin-qt` (on Linux).
 
 The first time you run version 0.15.0 or newer, your chainstate database will be converted to a
@@ -40,10 +40,10 @@ wallets that were created with older versions are not affected by this.
 Compatibility
 ==============
 
-Bitcoin Core is extensively tested on multiple operating systems using
+biblio Core is extensively tested on multiple operating systems using
 the Linux kernel, macOS 10.8+, and Windows Vista and later. Windows XP is not supported.
 
-Bitcoin Core should also work on most other Unix-like systems but is not
+biblio Core should also work on most other Unix-like systems but is not
 frequently tested on them.
 
 Notable changes
@@ -54,7 +54,7 @@ Wallet changes
 
 ### Segwit Wallet
 
-Bitcoin Core 0.16.0 introduces full support for segwit in the wallet and user interfaces. A new `-addresstype` argument has been added, which supports `legacy`, `p2sh-segwit` (default), and `bech32` addresses. It controls what kind of addresses are produced by `getnewaddress`, `getaccountaddress`, and `createmultisigaddress`. A `-changetype` argument has also been added, with the same options, and by default equal to `-addresstype`, to control which kind of change is used.
+biblio Core 0.16.0 introduces full support for segwit in the wallet and user interfaces. A new `-addresstype` argument has been added, which supports `legacy`, `p2sh-segwit` (default), and `bech32` addresses. It controls what kind of addresses are produced by `getnewaddress`, `getaccountaddress`, and `createmultisigaddress`. A `-changetype` argument has also been added, with the same options, and by default equal to `-addresstype`, to control which kind of change is used.
 
 A new `address_type` parameter has been added to the `getnewaddress` and `addmultisigaddress` RPCs to specify which type of address to generate.
 A `change_type` argument has been added to the `fundrawtransaction` RPC to override the `-changetype` argument for specific transactions.
@@ -92,7 +92,7 @@ use the `replaceable` argument for individual transactions.
 
 ### Wallets directory configuration (`-walletdir`)
 
-Bitcoin Core now has more flexibility in where the wallets directory can be
+biblio Core now has more flexibility in where the wallets directory can be
 located. Previously wallet database files were stored at the top level of the
 bitcoin data directory. The behavior is now:
 
@@ -112,7 +112,7 @@ becomes unavailable during operation, funds may be lost.
 
 Build: Minimum GCC bumped to 4.8.x
 ------------------------------------
-The minimum version of the GCC compiler required to compile Bitcoin Core is now 4.8. No effort will be
+The minimum version of the GCC compiler required to compile biblio Core is now 4.8. No effort will be
 made to support older versions of GCC. See discussion in issue #11732 for more information.
 The minimum version for the Clang compiler is still 3.3. Other minimum dependency versions can be found in `doc/dependencies.md` in the repository.
 
@@ -127,7 +127,7 @@ The SHA256 hashing optimizations for architectures supporting SSE4, which lead t
 
 GUI changes
 -----------
-- Uses of "µBTC" in the GUI now also show the more colloquial term "bits", specified in BIP176.
+- Uses of "µLEX" in the GUI now also show the more colloquial term "bits", specified in BIP176.
 - The option to reuse a previous address has now been removed. This was justified by the need to "resend" an invoice, but now that we have the request history, that need should be gone.
 - Support for searching by TXID has been added, rather than just address and label.
 - A "Use available balance" option has been added to the send coins dialog, to add the remaining available wallet balance to a transaction output.
@@ -342,7 +342,7 @@ Testing changes
 - #11616 `8585bb8` Update ban-state in case of dirty-state during periodic sweep (jonasschnelli)
 - #11605 `f19ca12` Enable RBF by default in QT (Sjors)
 - #12074 `a1136f0` Optimizes boolean expression model && model->haveWatchOnly() (251Labs)
-- #12035 `eeb6d52` Change µBTC to bits (jb55)
+- #12035 `eeb6d52` Change µLEX to bits (jb55)
 - #12092 `fd4ca17` Replaces numbered place marker %2 with %1 (251Labs)
 - #12173 `bbc91b7` Use flexible font size for QRCode image address (jonasschnelli)
 - #12211 `10d10d7` Avoid potential null dereference in ReceiveCoinsDialog constructor (ryanofsky)

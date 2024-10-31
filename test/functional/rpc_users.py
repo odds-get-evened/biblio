@@ -1,10 +1,10 @@
 #!/usr/bin/env python3
-# Copyright (c) 2015-2022 The Bitcoin Core developers
+# Copyright (c) 2015-2022 The biblio Core developers
 # Distributed under the MIT software license, see the accompanying
 # file COPYING or http://www.opensource.org/licenses/mit-license.php.
 """Test multiple RPC users."""
 
-from test_framework.test_framework import BitcoinTestFramework
+from test_framework.test_framework import biblioTestFramework
 from test_framework.util import (
     assert_equal,
     str_to_b64str,
@@ -34,7 +34,7 @@ def call_with_auth(node, user, password):
     return resp
 
 
-class HTTPBasicsTest(BitcoinTestFramework):
+class HTTPBasicsTest(biblioTestFramework):
     def set_test_params(self):
         self.num_nodes = 2
         self.supports_cli = False

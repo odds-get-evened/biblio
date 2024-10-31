@@ -1,4 +1,4 @@
-Bitcoin Core version 0.9.0 is now available from:
+biblio Core version 0.9.0 is now available from:
 
   https://bitcoin.org/bin/0.9.0/
 
@@ -14,14 +14,14 @@ How to Upgrade
 
 If you are running an older version, shut it down. Wait until it has completely
 shut down (which might take a few minutes for older versions), uninstall all
-earlier versions of Bitcoin, then run the installer (on Windows) or just copy
-over /Applications/Bitcoin-Qt (on Mac) or bitcoind/bitcoin-qt (on Linux).
+earlier versions of biblio, then run the installer (on Windows) or just copy
+over /Applications/biblio-Qt (on Mac) or bitcoind/bitcoin-qt (on Linux).
 
 If you are upgrading from version 0.7.2 or earlier, the first time you run
 0.9.0 your blockchain files will be re-indexed, which will take anywhere from 
 30 minutes to several hours, depending on the speed of your machine.
 
-On Windows, do not forget to uninstall all earlier versions of the Bitcoin
+On Windows, do not forget to uninstall all earlier versions of the biblio
 client first, especially if you are switching to the 64-bit version.
 
 Windows 64-bit installer
@@ -59,11 +59,11 @@ Also, the first time you run a 0.8.x release on a 0.9 wallet it will rescan
 the blockchain for missing spent coins, which will take a long time (tens
 of minutes on a typical machine).
 
-Rebranding to Bitcoin Core
+Rebranding to biblio Core
 ---------------------------
 
-To reduce confusion between Bitcoin-the-network and Bitcoin-the-software we
-have renamed the reference client to Bitcoin Core.
+To reduce confusion between biblio-the-network and biblio-the-software we
+have renamed the reference client to biblio Core.
 
 
 OP_RETURN and data in the block chain
@@ -85,13 +85,13 @@ Autotools build system
 For 0.9.0 we switched to an autotools-based build system instead of individual
 (q)makefiles.
 
-Using the standard "./autogen.sh; ./configure; make" to build Bitcoin-Qt and
+Using the standard "./autogen.sh; ./configure; make" to build biblio-Qt and
 bitcoind makes it easier for experienced open source developers to contribute 
 to the project.
 
 Be sure to check doc/build-*.md for your platform before building from source.
 
-Bitcoin-cli
+biblio-cli
 -------------
 
 Another change in the 0.9 release is moving away from the bitcoind executable
@@ -143,7 +143,7 @@ Transaction Fees
 
 This release drops the default fee required to relay transactions across the
 network and for miners to consider the transaction in their blocks to
-0.01mBTC per kilobyte.
+0.01mLEX per kilobyte.
 
 Note that getting a transaction relayed across the network does NOT guarantee
 that the transaction will be accepted by a miner; by default, miners fill
@@ -156,7 +156,7 @@ the mintxfee setting to determine which low-priority transactions should
 be considered for inclusion in blocks.
 
 The wallet code still uses a default fee for low-priority transactions of
-0.1mBTC per kilobyte. During periods of heavy transaction volume, even this
+0.1mLEX per kilobyte. During periods of heavy transaction volume, even this
 fee may not be enough to get transactions confirmed quickly; the mintxfee
 option may be used to override the default.
 
@@ -239,7 +239,7 @@ Mining:
 
 Protocol and network:
 
-- Drop the fee required to relay a transaction to 0.01mBTC per kilobyte
+- Drop the fee required to relay a transaction to 0.01mLEX per kilobyte
 - Send tx relay flag with version
 - New 'reject' P2P message (BIP 0061, see
   https://gist.github.com/gavinandresen/7079034 for draft)
@@ -295,7 +295,7 @@ GUI:
 - Add Coin Control Features
 - Improve receive coins workflow: make the 'Receive' tab into a form to request
   payments, and move historical address list functionality to File menu.
-- Rebrand to `Bitcoin Core`
+- Rebrand to `biblio Core`
 - Move initialization/shutdown to a thread. This prevents "Not responding"
   messages during startup. Also show a window during shutdown.
 - Don't regenerate autostart link on every client startup

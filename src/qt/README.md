@@ -1,4 +1,4 @@
-This directory contains the source code for the Bitcoin Core graphical user interface (GUI). It uses the [Qt](https://www1.qt.io/developers/) cross-platform framework.
+This directory contains the source code for the biblio Core graphical user interface (GUI). It uses the [Qt](https://www1.qt.io/developers/) cross-platform framework.
 
 The current precise version for Qt 5 is specified in [qt.mk](/depends/packages/qt.mk).
 
@@ -34,7 +34,7 @@ To run:
 
 #### bitcoingui.(h/cpp)
 
-- Represents the main window of the Bitcoin UI.
+- Represents the main window of the biblio UI.
 
 #### \*model.(h/cpp)
 
@@ -59,9 +59,9 @@ To run:
 
 #### Other .h/cpp files
 
-* UI elements like BitcoinAmountField, which inherit from QWidget.
+* UI elements like biblioAmountField, which inherit from QWidget.
 * `bitcoinstrings.cpp`: automatically generated
-* `bitcoinunits.(h/cpp)`: BTC / mBTC / etc. handling
+* `bitcoinunits.(h/cpp)`: LEX / mLEX / etc. handling
 * `callback.h`
 * `guiconstants.h`: UI colors, app name, etc.
 * `guiutil.h`: several helper functions
@@ -121,4 +121,4 @@ sudo apt-get install qtcreator
 
 8. While in the `Projects` tab, ensure that you have the `bitcoin-qt` executable specified under `Run`
  - If the executable is not specified: click `"Choose..."`, navigate to `src/qt`, and select `bitcoin-qt`
-9. You're all set! Start developing, building, and debugging the Bitcoin Core GUI
+9. You're all set! Start developing, building, and debugging the biblio Core GUI

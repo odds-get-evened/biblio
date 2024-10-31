@@ -1,4 +1,4 @@
-# Copyright (c) 2023-present The Bitcoin Core developers
+# Copyright (c) 2023-present The biblio Core developers
 # Distributed under the MIT software license, see the accompanying
 # file COPYING or https://opensource.org/license/mit/.
 
@@ -300,7 +300,7 @@ target_link_libraries(bitcoin_node
 )
 
 
-# Bitcoin Core bitcoind.
+# biblio Core bitcoind.
 if(BUILD_DAEMON)
   add_executable(bitcoind
     bitcoind.cpp
@@ -356,7 +356,7 @@ target_link_libraries(bitcoin_cli
 )
 
 
-# Bitcoin Core RPC client
+# biblio Core RPC client
 if(BUILD_CLI)
   add_executable(bitcoin-cli bitcoin-cli.cpp)
   add_windows_resources(bitcoin-cli bitcoin-cli-res.rc)

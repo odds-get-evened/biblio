@@ -1,4 +1,4 @@
-# Bitcoin Tidy
+# biblio Tidy
 
 Example Usage:
 
